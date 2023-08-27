@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:teenchat/Model/ChatModel.dart';
 import 'package:teenchat/Pages/ChatPage.dart';
 
 class Homescreen extends StatefulWidget {
-  const Homescreen({Key? key}) : super(key: key);
-
+  const Homescreen({Key? key,required this.chatmodels,required this.sourceChat}) : super(key: key);
+  final List<ChatModel> chatmodels;
+  final ChatModel sourceChat;
   @override
    _HomescreenState createState() => _HomescreenState();
 }
@@ -59,7 +61,10 @@ class _HomescreenState extends State<Homescreen> with SingleTickerProviderStateM
         controller:_controller,
         children: [
           Center(child: Text("Tab 1 Content")),
-          ChatPage(),
+          ChatPage(
+            chatmodels: widget.chatmodels,
+            sourceChat: widget.sourceChat,
+          ),
           Center(child: Text("Tab 3 Content")),
           Center(child: Text("Tab 4 Content")),
       ],),

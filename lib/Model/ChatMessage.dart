@@ -1,10 +1,10 @@
 class ChatMessage {
   final String content;
-  final String uuid;
+  final String type;
 
   ChatMessage({
     required this.content,
-    required this.uuid,
+    required this.type,
 
   });
 }

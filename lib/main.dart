@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:teenchat/Screens/Homescreen.dart';
-
+import 'package:teenchat/Screens/LoginScreen.dart';
 
  void main() {
   runApp(MyApp());
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         primaryColor: const Color(0xFF39E64F),
        
       ),
-      home: Homescreen(),
+      home: LoginScreen(),
     );
   }
 }
