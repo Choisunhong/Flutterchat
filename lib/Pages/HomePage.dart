@@ -1,27 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:teenchat/CustomUI/CustomCard.dart';
+import 'package:teenchat/CustomUI/FriendCard.dart';
 import 'package:teenchat/Model/ChatModel.dart';
 
-class ChatPage extends StatefulWidget {
-  ChatPage({Key? key,required this.chatmodels, required this.sourceChat,required this.roomId}) : super(key: key);
+class HomePage extends StatefulWidget {
+  HomePage({Key? key,required this.chatmodels, required this.sourceChat,required this.roomId}) : super(key: key);
   final List<ChatModel> chatmodels;
   final ChatModel sourceChat;
   final ChatModel roomId;
   @override
-  _ChatpageState createState() => _ChatpageState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _ChatpageState extends State<ChatPage> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.chat),
-      ),
+      
       body: ListView.builder(
         itemCount: widget.chatmodels.length,
-        itemBuilder: (context, index) => CustomCard(
+        itemBuilder: (context, index) => FriendCard(
           chatModel: widget.chatmodels[index],
           sourceChat: widget.sourceChat,
           roomId: widget.roomId,

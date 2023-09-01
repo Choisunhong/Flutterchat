@@ -10,9 +10,10 @@ import 'package:teenchat/Stomp/socket_handler.dart';
 
 
 class IndividualPage extends StatefulWidget{
-  IndividualPage({Key? key,required this.chatModel, required this.sourceChat}) :super(key: key);
+  IndividualPage({Key? key,required this.chatModel, required this.sourceChat,required this.roomId}) :super(key: key);
   final ChatModel chatModel;
   final ChatModel sourceChat;
+  final ChatModel roomId;
   @override
    _IndividualPageState createState() => _IndividualPageState();
 }

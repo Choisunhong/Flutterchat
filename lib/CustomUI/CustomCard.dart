@@ -4,9 +4,10 @@ import 'package:teenchat/Screens/IndividualPage.dart';
 
 
 class CustomCard extends StatelessWidget {
-  const CustomCard({Key? key,required this.chatModel,required this.sourceChat}):super(key: key);
+  const CustomCard({Key? key,required this.chatModel,required this.sourceChat,required this.roomId}):super(key: key);
   final ChatModel chatModel;
   final ChatModel sourceChat;
+  final ChatModel roomId;
 @override
   Widget build(BuildContext context) {
     return  InkWell(
@@ -14,7 +15,8 @@ class CustomCard extends StatelessWidget {
         Navigator.push(context, MaterialPageRoute(builder: (context)=>
         IndividualPage(
           chatModel: chatModel,
-          sourceChat: sourceChat,)));
+          sourceChat: sourceChat,
+          roomId: roomId,)));
       },
        child: Column(
       children: [

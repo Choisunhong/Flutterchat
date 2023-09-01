@@ -12,6 +12,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   late ChatModel sourceChat;
+  final ChatModel roomId = ChatModel(roomId: '');
   List<ChatModel> chatmodels=[
     ChatModel(
       name:"Test 01",
@@ -20,6 +21,7 @@ class _LoginScreenState extends State<LoginScreen> {
       time:"4:00",
       icon:"person.svg",
       id:"Park",
+      roomId: " ",
     ),
     ChatModel(
       name:"Test 02",
@@ -28,6 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
       time:"5:00",
       icon:"person.svg",
       id: "Choi",
+      roomId: " ",
     )
   ];
   @override
@@ -38,10 +41,14 @@ class _LoginScreenState extends State<LoginScreen> {
         itemBuilder: (context,index)=>InkWell(
           onTap: (){
            sourceChat= chatmodels.removeAt(index);// 만약 test01 을 선택하면 test01 의 index인 1 을 삭제하고 나머지 chat model을 구동
-           Navigator.pushReplacement(context, MaterialPageRoute(builder: (builder)=>Homescreen(//child 클래스인 홈스크린에 chatmodels를 path한다
+           Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (builder)=>Homescreen(//child 클래스인 홈스크린에 chatmodels를 path한다
              chatmodels: chatmodels,
              sourceChat: sourceChat,
-           )));
+             roomId: roomId,
+           )
+           )
+           );
           },
           child: ButtonCard(
             name: chatmodels[index].name,

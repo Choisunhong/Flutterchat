@@ -5,12 +5,14 @@ class ChatModel {
   final String time;
   final String currentMessage;
   final String id;
+  final String roomId;
   ChatModel({
     this.name = '',
     this.icon = '',
     this.isGroup = false,
     this.time = '',
     this.currentMessage = '',
-    required this.id,
+    this.id='',
+    this.roomId='',
   });
 }
